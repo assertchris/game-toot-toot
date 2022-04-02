@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfltea4btd7tw"]
+
+[ext_resource type="PackedScene" uid="uid://ckvvw5cf8wslf" path="res://nodes/vehicles/vehicle.tscn" id="1_jkmdu"]
+[ext_resource type="Script" path="res://nodes/vehicles/ambulance_vehicle.gd" id="2_646o4"]
+[ext_resource type="Texture2D" uid="uid://cu5vvh0qmqnf0" path="res://images/vehicles/ambulance.png" id="2_x03n7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylk61"]
+size = Vector2(38, 20)
+
+[node name="AmbulanceVehicle" instance=ExtResource( "1_jkmdu" )]
+script = ExtResource( "2_646o4" )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( "2_x03n7" )
+
+[node name="Collider" parent="Hitbox" index="0"]
+shape = SubResource( "RectangleShape2D_ylk61" )

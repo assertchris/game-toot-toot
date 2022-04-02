@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cok8aelc5d5uy"]
+
+[ext_resource type="PackedScene" uid="uid://cfrj7vkrqm7rg" path="res://nodes/screens/screen.tscn" id="1_t21jl"]
+[ext_resource type="Script" path="res://nodes/screens/credits_screen.gd" id="2_q0obt"]
+
+[node name="CreditsScreen" instance=ExtResource( "1_t21jl" )]
+script = ExtResource( "2_q0obt" )

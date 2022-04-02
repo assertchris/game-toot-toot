@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=3 uid="uid://pap0qynbwygo"]
+
+[ext_resource type="PackedScene" uid="uid://cfrj7vkrqm7rg" path="res://nodes/screens/screen.tscn" id="1_1shsn"]
+[ext_resource type="Script" path="res://nodes/screens/play_screen.gd" id="2_q2jpx"]
+[ext_resource type="PackedScene" uid="uid://bfltea4btd7tw" path="res://nodes/vehicles/ambulance_vehicle.tscn" id="3_jisgw"]
+
+[sub_resource type="Curve2D" id="Curve2D_rtv23"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 330, 30, 0, 0, 0, 0, 300, 30, 0, 0, 0, 0, 240, 30, 0, 0, 0, 0, 180, 30, 0, 0, 0, 0, 120, 30, 0, 0, 0, 0, 60, 30, -0.353553, -30.052, 0.353553, 30.052, 30, 60, 0, 0, 0, 0, 30, 90, 0, 0, 0, 0, 30, 120, 0, 0, 0, 0, 30, 150, 0, 0, 0, 0, 30, 180, 0, 0, 0, 0, 30, 210, 0, 0, 0, 0, 30, 240)
+}
+
+[sub_resource type="Curve2D" id="Curve2D_ywcpj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 30, 60, -29.6985, 0, 29.6985, 0, 60, 90, 0, 0, 0, 0, 120, 90, 0, 0, 0, 0, 180, 90, 0, 0, 0, 0, 240, 90, 0, 0, 0, 0, 300, 90, 0, 0, 0, 0, 330, 90)
+}
+
+[sub_resource type="Curve2D" id="Curve2D_gntnk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 30, 120, -30.052, 0.353553, 30.052, -0.353553, 60, 150, 0, 0, 0, 0, 120, 150, 0, 0, 0, 0, 180, 150, 0, 0, 0, 0, 240, 150, 0, 0, 0, 0, 300, 150, 0, 0, 0, 0, 330, 150)
+}
+
+[sub_resource type="Curve2D" id="Curve2D_aaj5h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 30, 180, -29.6985, 0, 29.6985, 0, 60, 210, 0, 0, 0, 0, 120, 210, 0, 0, 0, 0, 180, 210, 0, 0, 0, 0, 240, 210, 0, 0, 0, 0, 300, 210, 0, 0, 0, 0, 330, 210)
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8kst5"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7y3q5"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbfar"]
+radius = 15.0
+
+[node name="PlayScreen" instance=ExtResource( "1_1shsn" )]
+script = ExtResource( "2_q2jpx" )
+__meta__ = {
+"_edit_horizontal_guides_": [120.0, 60.0, 180.0, 210.0, 150.0, 90.0, 30.0],
+"_edit_vertical_guides_": [60.0, 120.0, 180.0, 240.0, 300.0, 330.0, 30.0]
+}
+vehicles = [ExtResource( "3_jisgw" )]
+
+[node name="Paths" type="Node2D" parent="." index="0"]
+
+[node name="Entrance" type="Path2D" parent="Paths" index="0"]
+curve = SubResource( "Curve2D_rtv23" )
+
+[node name="Top" type="Path2D" parent="Paths" index="1"]
+curve = SubResource( "Curve2D_ywcpj" )
+
+[node name="Middle" type="Path2D" parent="Paths" index="2"]
+curve = SubResource( "Curve2D_gntnk" )
+
+[node name="Bottom" type="Path2D" parent="Paths" index="3"]
+curve = SubResource( "Curve2D_aaj5h" )
+
+[node name="Turns" type="Node2D" parent="." index="1"]
+
+[node name="Top" type="Area2D" parent="Turns" index="0"]
+collision_layer = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Indicator" type="ColorRect" parent="Turns/Top" index="0"]
+offset_left = 30.0
+offset_top = 60.0
+offset_right = 60.0
+offset_bottom = 90.0
+mouse_filter = 2
+
+[node name="Collider" type="CollisionShape2D" parent="Turns/Top" index="1"]
+position = Vector2(45, 75)
+shape = SubResource( "CircleShape2D_8kst5" )
+
+[node name="Middle" type="Area2D" parent="Turns" index="1"]
+collision_layer = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Indicator" type="ColorRect" parent="Turns/Middle" index="0"]
+offset_left = 30.0
+offset_top = 120.0
+offset_right = 60.0
+offset_bottom = 150.0
+mouse_filter = 2
+
+[node name="Collider" type="CollisionShape2D" parent="Turns/Middle" index="1"]
+position = Vector2(45, 135)
+shape = SubResource( "CircleShape2D_7y3q5" )
+
+[node name="Bottom" type="Area2D" parent="Turns" index="2"]
+collision_layer = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Indicator" type="ColorRect" parent="Turns/Bottom" index="0"]
+offset_left = 30.0
+offset_top = 180.0
+offset_right = 60.0
+offset_bottom = 210.0
+mouse_filter = 2
+
+[node name="Collider" type="CollisionShape2D" parent="Turns/Bottom" index="1"]
+position = Vector2(45, 195)
+shape = SubResource( "CircleShape2D_jbfar" )
+
+[node name="VehicleSpawnTimer" type="Timer" parent="." index="2"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="Turns/Top" to="." method="_on_top_area_entered"]
+[connection signal="input_event" from="Turns/Top" to="." method="_on_top_input_event"]
+[connection signal="area_entered" from="Turns/Middle" to="." method="_on_middle_area_entered"]
+[connection signal="input_event" from="Turns/Middle" to="." method="_on_middle_input_event"]
+[connection signal="area_entered" from="Turns/Bottom" to="." method="_on_bottom_area_entered"]
+[connection signal="input_event" from="Turns/Bottom" to="." method="_on_bottom_input_event"]
+[connection signal="timeout" from="VehicleSpawnTimer" to="." method="_on_vehicle_spawn_timer_timeout"]
