@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Node2D",
+"class": &"GameLevel",
+"language": &"GDScript",
+"path": "res://nodes/levels/level.gd"
+}, {
 "base": "MarginContainer",
 "class": &"GameScreen",
 "language": &"GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[{
 "path": "res://nodes/vehicles/vehicle.gd"
 }]
 _global_script_class_icons={
+"GameLevel": "",
 "GameScreen": "",
 "GameVehicle": ""
 }
