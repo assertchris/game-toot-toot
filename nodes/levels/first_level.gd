@@ -23,11 +23,11 @@ func _ready() -> void:
 	for i in range(_quests.get_child_count()):
 		quests.append(null)
 
-func _draw() -> void:
-	draw_polyline(_entrance_path.curve.get_baked_points(), Color.BLACK, 2, false)
-	draw_polyline(_top_path.curve.get_baked_points(), Color.BLACK, 2, false)
-	draw_polyline(_middle_path.curve.get_baked_points(), Color.BLACK, 2, false)
-	draw_polyline(_bottom_path.curve.get_baked_points(), Color.BLACK, 2, false)
+#func _draw() -> void:
+#	draw_polyline(_entrance_path.curve.get_baked_points(), Color.BLACK, 2, false)
+#	draw_polyline(_top_path.curve.get_baked_points(), Color.BLACK, 2, false)
+#	draw_polyline(_middle_path.curve.get_baked_points(), Color.BLACK, 2, false)
+#	draw_polyline(_bottom_path.curve.get_baked_points(), Color.BLACK, 2, false)
 
 func _process(delta: float) -> void:
 	for child in _entrance_path.get_children():

@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Node",
+"class": &"ConstantsScript",
+"language": &"GDScript",
+"path": "res://nodes/globals/constants.gd"
+}, {
 "base": "Node2D",
 "class": &"GameLevel",
 "language": &"GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[{
 "path": "res://nodes/vehicles/vehicle.gd"
 }]
 _global_script_class_icons={
+"ConstantsScript": "",
 "GameLevel": "",
 "GameScreen": "",
 "GameVehicle": ""
@@ -64,3 +70,4 @@ window/stretch/aspect="expand"
 [rendering]
 
 vulkan/rendering/back_end=1
+environment/defaults/default_clear_color=Color(0.666667, 0.658824, 0.741176, 1)
