@@ -6,22 +6,22 @@
 
 [sub_resource type="Curve2D" id="Curve2D_i7ytv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 180, -90, 0, 0, 0, 0, 120, -90, 0, 0, 0, 0, 60, -90, 0, 0, 0, 0, 0, -90, 0, 0, 0, 0, -60, -90, 0, 0, 0, 0, -120, -90, 0.151036, -30.052, -0.151036, 30.052, -151, -60, 0, 0, 0, 0, -150, 0, 0, 0, 0, 0, -150, 30, 0, -31.7891, 0, 31.7891, -150, 58, 0, 0, 0, 0, -180, 90)
+"points": PackedVector2Array(0, 0, 0, 0, 180, -90, 0, 0, 0, 0, -120, -90, 0.151036, -30.052, 0, 0, -150, -60, 0, 0, 0, 31.7891, -150, 58, 0, 0, 0, 0, -180, 90)
 }
 
 [sub_resource type="Curve2D" id="Curve2D_yei81"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -150, -60, -29.6985, 0, 29.6985, 0, -120, -30, 0, 0, 0, 0, -61, -30, 0, 0, 0, 0, 0, -30, 0, 0, 0, 0, 60, -30, 0, 0, 0, 0, 120, -30, 0, 0, 0, 0, 180, -30)
+"points": PackedVector2Array(0, 0, 0, 0, -150, -60, -29.6985, 0, 0, 0, -120, -30, 0, 0, 0, 0, 180, -30)
 }
 
 [sub_resource type="Curve2D" id="Curve2D_rumi3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -150, 0, -30.052, 0.353553, 30.052, -0.353553, -120, 30, 0, 0, 0, 0, -60, 30, 0, 0, 0, 0, -1, 30, 0, 0, 0, 0, 60, 30, 0, 0, 0, 0, 120, 30, 0, 0, 0, 0, 180, 30)
+"points": PackedVector2Array(0, 0, 0, 0, -150, 0, -30.052, 0.353553, 0, 0, -120, 30, 0, 0, 0, 0, 180, 30)
 }
 
 [sub_resource type="Curve2D" id="Curve2D_wr1qa"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -150, 58, -29.6985, 0, 29.6985, 0, -120, 90, 0, 0, 0, 0, -61, 90, 0, 0, 0, 0, 0, 90, 0, 0, 0, 0, 59, 90, 0, 0, 0, 0, 120, 90, 0, 0, 0, 0, 180, 90)
+"points": PackedVector2Array(0, 0, 0, 0, -150, 58, -29.6985, 0, 0, 0, -120, 90, 0, 0, 0, 0, 180, 90)
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v43gx"]
@@ -101,7 +101,54 @@ mouse_filter = 2
 position = Vector2(-135, 75)
 shape = SubResource( "CircleShape2D_i018n" )
 
-[node name="VehicleSpawnTimer" type="Timer" parent="." index="2"]
+[node name="Quests" type="Node2D" parent="." index="2"]
+
+[node name="Slot1" type="Position2D" parent="Quests" index="0"]
+position = Vector2(-90, -30)
+
+[node name="Slot2" type="Position2D" parent="Quests" index="1"]
+position = Vector2(-30, -30)
+
+[node name="Slot3" type="Position2D" parent="Quests" index="2"]
+position = Vector2(30, -30)
+
+[node name="Slot4" type="Position2D" parent="Quests" index="3"]
+position = Vector2(90, -30)
+
+[node name="Slot5" type="Position2D" parent="Quests" index="4"]
+position = Vector2(150, -30)
+
+[node name="Slot6" type="Position2D" parent="Quests" index="5"]
+position = Vector2(-90, 30)
+
+[node name="Slot7" type="Position2D" parent="Quests" index="6"]
+position = Vector2(-30, 30)
+
+[node name="Slot8" type="Position2D" parent="Quests" index="7"]
+position = Vector2(30, 30)
+
+[node name="Slot9" type="Position2D" parent="Quests" index="8"]
+position = Vector2(90, 30)
+
+[node name="Slot10" type="Position2D" parent="Quests" index="9"]
+position = Vector2(150, 30)
+
+[node name="Slot11" type="Position2D" parent="Quests" index="10"]
+position = Vector2(-90, 90)
+
+[node name="Slot12" type="Position2D" parent="Quests" index="11"]
+position = Vector2(-30, 90)
+
+[node name="Slot13" type="Position2D" parent="Quests" index="12"]
+position = Vector2(30, 90)
+
+[node name="Slot14" type="Position2D" parent="Quests" index="13"]
+position = Vector2(90, 90)
+
+[node name="Slot15" type="Position2D" parent="Quests" index="14"]
+position = Vector2(150, 90)
+
+[node name="VehicleSpawnTimer" type="Timer" parent="." index="3"]
 wait_time = 5.0
 autostart = true
 

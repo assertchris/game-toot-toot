@@ -9,13 +9,19 @@ extends GameLevel
 @onready var _top_indicator := $Turns/Top/Indicator
 @onready var _middle_indicator := $Turns/Middle/Indicator
 @onready var _bottom_indicator := $Turns/Bottom/Indicator
+@onready var _quests := $Quests
 
 var is_top_open := false
 var is_middle_open := false
 var is_bottom_open := false
 
+var quests := []
+
 func _ready() -> void:
 	color_turns()
+
+	for i in range(_quests.get_child_count()):
+		quests.append(null)
 
 func _draw() -> void:
 	draw_polyline(_entrance_path.curve.get_baked_points(), Color.BLACK, 2, false)
@@ -53,19 +59,19 @@ func _on_vehicle_spawn_timer_timeout() -> void:
 	_entrance_path.add_child(new_vehicle)
 	new_vehicle.fade_in()
 
-func _on_top_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_top_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			is_top_open = not is_top_open
 			color_turns()
 
-func _on_middle_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_middle_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			is_middle_open = not is_middle_open
 			color_turns()
 
-func _on_bottom_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_bottom_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			is_bottom_open = not is_bottom_open
@@ -105,6 +111,6 @@ func _on_bottom_area_entered(area: Area2D) -> void:
 
 func move_to_path(vehicle : GameVehicle, path : Path2D) -> void:
 	vehicle.get_parent().remove_child(vehicle)
-	path.add_child(vehicle)
-	vehicle.offset = 0
-	vehicle.flip()
+	path.call_deferred("add_child", vehicle)
+	vehicle.call_deferred("set_offset", 0)
+	vehicle.call_deferred("flip")

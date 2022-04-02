@@ -15,12 +15,12 @@ func flip() -> void:
 
 func fade_in() -> void:
 	_animator.play("fade_in")
-	await _animator.animation_finished
+	var _name = await _animator.animation_finished
 	faded_in.emit()
 
 func fade_out() -> void:
 	_animator.play_backwards("fade_in")
-	await _animator.animation_finished
+	var _name = await _animator.animation_finished
 	faded_out.emit()
 
 func flip_sprite() -> void:
