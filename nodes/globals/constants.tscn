@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2dxncq2wwbi0"]
+[gd_scene load_steps=18 format=3 uid="uid://c2dxncq2wwbi0"]
 
 [ext_resource type="Script" path="res://nodes/globals/constants.gd" id="1_oxc2y"]
+[ext_resource type="AudioStream" uid="uid://dcxd4t6gtine0" path="res://music/by_happy.mp3" id="2_me160"]
+[ext_resource type="AudioStream" uid="uid://bmyh4kedpplpp" path="res://music/cooking.mp3" id="3_8al2a"]
+[ext_resource type="AudioStream" uid="uid://oewp8u0m4d3r" path="res://music/cute_cheerful.mp3" id="4_igmc1"]
+[ext_resource type="AudioStream" uid="uid://c5hjb5qgcggbb" path="res://music/feel_good.mp3" id="5_27mxg"]
+[ext_resource type="AudioStream" uid="uid://dllg8288jpdu6" path="res://music/fun_kids_ukulele.mp3" id="6_vlxtv"]
+[ext_resource type="AudioStream" uid="uid://drjh38387rj23" path="res://music/happy_baby.mp3" id="7_81a78"]
+[ext_resource type="AudioStream" uid="uid://c33hcsbf20vme" path="res://music/happy_positive_kids.mp3" id="8_vssfc"]
+[ext_resource type="AudioStream" uid="uid://d35r5etsbdrqo" path="res://music/happy_ukulele_kids.mp3" id="9_md0p2"]
+[ext_resource type="AudioStream" uid="uid://cjf2ltp2i3rgj" path="res://music/summer_kids.mp3" id="10_7ib7r"]
+[ext_resource type="AudioStream" uid="uid://cxex8n1b0k3k0" path="res://music/upbeat_happy_kids.mp3" id="11_hr6fc"]
+[ext_resource type="AudioStream" uid="uid://cp8c8sbsx0pa7" path="res://music/upbeat_ukulele_kids.mp3" id="12_x0fh6"]
+[ext_resource type="AudioStream" uid="uid://14hltby3feg1" path="res://music/whistle_happy.mp3" id="13_tkox1"]
+[ext_resource type="PackedScene" uid="uid://cok8aelc5d5uy" path="res://nodes/screens/credits_screen.tscn" id="14_yp3y0"]
+[ext_resource type="PackedScene" uid="uid://pap0qynbwygo" path="res://nodes/screens/play_screen.tscn" id="15_x48y3"]
+[ext_resource type="PackedScene" uid="uid://b5umw6t0o4dla" path="res://nodes/screens/settings_screen.tscn" id="16_x6hd5"]
+[ext_resource type="PackedScene" uid="uid://eoxuq8p7535n" path="res://nodes/screens/welcome_screen.tscn" id="17_akbb1"]
 
 [node name="Constants" type="Node"]
 script = ExtResource( "1_oxc2y" )
+music_streams = [ExtResource( "2_me160" ), ExtResource( "3_8al2a" ), ExtResource( "4_igmc1" ), ExtResource( "5_27mxg" ), ExtResource( "6_vlxtv" ), ExtResource( "7_81a78" ), ExtResource( "8_vssfc" ), ExtResource( "9_md0p2" ), ExtResource( "10_7ib7r" ), ExtResource( "11_hr6fc" ), ExtResource( "12_x0fh6" ), ExtResource( "13_tkox1" )]
+credits_scene = ExtResource( "14_yp3y0" )
+play_scene = ExtResource( "15_x48y3" )
+settings_scene = ExtResource( "16_x6hd5" )
+welcome_scene = ExtResource( "17_akbb1" )

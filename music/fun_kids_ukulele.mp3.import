@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dllg8288jpdu6"
+path="res://.godot/imported/fun_kids_ukulele.mp3-cd2ce84db23f650ac8a5d0a0e9d281e7.mp3str"
+
+[deps]
+
+source_file="res://music/fun_kids_ukulele.mp3"
+dest_files=["res://.godot/imported/fun_kids_ukulele.mp3-cd2ce84db23f650ac8a5d0a0e9d281e7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

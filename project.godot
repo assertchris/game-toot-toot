@@ -9,11 +9,6 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Node",
-"class": &"ConstantsScript",
-"language": &"GDScript",
-"path": "res://nodes/globals/constants.gd"
-}, {
 "base": "Node2D",
 "class": &"GameLevel",
 "language": &"GDScript",
@@ -30,7 +25,6 @@ _global_script_classes=[{
 "path": "res://nodes/vehicles/vehicle.gd"
 }]
 _global_script_class_icons={
-"ConstantsScript": "",
 "GameLevel": "",
 "GameScreen": "",
 "GameVehicle": ""
@@ -39,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Toot Toot"
-run/main_scene="res://nodes/screens/play_screen.tscn"
+run/main_scene="res://nodes/screens/welcome_screen.tscn"
 config/icon="res://images/icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 

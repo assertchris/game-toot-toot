@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5hjb5qgcggbb"
+path="res://.godot/imported/feel_good.mp3-26ed043fbd237e1e71f715d63859618d.mp3str"
+
+[deps]
+
+source_file="res://music/feel_good.mp3"
+dest_files=["res://.godot/imported/feel_good.mp3-26ed043fbd237e1e71f715d63859618d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

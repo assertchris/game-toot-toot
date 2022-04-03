@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxex8n1b0k3k0"
+path="res://.godot/imported/upbeat_happy_kids.mp3-db1afa7813ffdf280d2949bf37cbe2b4.mp3str"
+
+[deps]
+
+source_file="res://music/upbeat_happy_kids.mp3"
+dest_files=["res://.godot/imported/upbeat_happy_kids.mp3-db1afa7813ffdf280d2949bf37cbe2b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

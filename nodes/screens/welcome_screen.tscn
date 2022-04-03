@@ -5,3 +5,10 @@
 
 [node name="WelcomeScreen" instance=ExtResource( "1_0mq5r" )]
 script = ExtResource( "2_m4qy8" )
+
+[node name="PlayButton" type="Button" parent="." index="0"]
+offset_right = 360.0
+offset_bottom = 240.0
+text = "play"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

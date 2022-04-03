@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d35r5etsbdrqo"
+path="res://.godot/imported/happy_ukulele_kids.mp3-95a8424b419742e1630e85b3cb394854.mp3str"
+
+[deps]
+
+source_file="res://music/happy_ukulele_kids.mp3"
+dest_files=["res://.godot/imported/happy_ukulele_kids.mp3-95a8424b419742e1630e85b3cb394854.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

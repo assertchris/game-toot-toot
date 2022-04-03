@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://oewp8u0m4d3r"
+path="res://.godot/imported/cute_cheerful.mp3-79fc911d969f3440548b852f19041d69.mp3str"
+
+[deps]
+
+source_file="res://music/cute_cheerful.mp3"
+dest_files=["res://.godot/imported/cute_cheerful.mp3-79fc911d969f3440548b852f19041d69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

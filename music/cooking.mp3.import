@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmyh4kedpplpp"
+path="res://.godot/imported/cooking.mp3-d4de8793237e39c05e5df196d0bc9e2e.mp3str"
+
+[deps]
+
+source_file="res://music/cooking.mp3"
+dest_files=["res://.godot/imported/cooking.mp3-d4de8793237e39c05e5df196d0bc9e2e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

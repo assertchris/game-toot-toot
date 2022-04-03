@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp8c8sbsx0pa7"
+path="res://.godot/imported/upbeat_ukulele_kids.mp3-9d6cf708e226934d798763ddda48aa95.mp3str"
+
+[deps]
+
+source_file="res://music/upbeat_ukulele_kids.mp3"
+dest_files=["res://.godot/imported/upbeat_ukulele_kids.mp3-9d6cf708e226934d798763ddda48aa95.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

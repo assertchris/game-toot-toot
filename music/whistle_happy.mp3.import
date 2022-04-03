@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://14hltby3feg1"
+path="res://.godot/imported/whistle_happy.mp3-8675892f01033ecf3ef64f4309e5386b.mp3str"
+
+[deps]
+
+source_file="res://music/whistle_happy.mp3"
+dest_files=["res://.godot/imported/whistle_happy.mp3-8675892f01033ecf3ef64f4309e5386b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

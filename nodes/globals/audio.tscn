@@ -4,3 +4,16 @@
 
 [node name="Audio" type="Node"]
 script = ExtResource( "1_kpqm4" )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"music"
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"sounds"
+
+[node name="RestartMusicTimer" type="Timer" parent="."]
+wait_time = 15.0
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]
+[connection signal="finished" from="SoundPlayer" to="." method="_on_sound_player_finished"]
+[connection signal="timeout" from="RestartMusicTimer" to="." method="_on_restart_music_timer_timeout"]

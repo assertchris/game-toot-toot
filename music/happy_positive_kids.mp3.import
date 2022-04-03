@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c33hcsbf20vme"
+path="res://.godot/imported/happy_positive_kids.mp3-e209a6e08220cdd35230158cfa18c238.mp3str"
+
+[deps]
+
+source_file="res://music/happy_positive_kids.mp3"
+dest_files=["res://.godot/imported/happy_positive_kids.mp3-e209a6e08220cdd35230158cfa18c238.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

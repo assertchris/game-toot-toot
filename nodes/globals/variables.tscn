@@ -4,3 +4,7 @@
 
 [node name="Variables" type="Node"]
 script = ExtResource( "1_t4ub0" )
+
+[node name="SaveTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SaveTimer" to="." method="_on_save_timer_timeout"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drjh38387rj23"
+path="res://.godot/imported/happy_baby.mp3-038ea0f55c4950d36e370ff01404e1e5.mp3str"
+
+[deps]
+
+source_file="res://music/happy_baby.mp3"
+dest_files=["res://.godot/imported/happy_baby.mp3-038ea0f55c4950d36e370ff01404e1e5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0

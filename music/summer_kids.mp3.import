@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjf2ltp2i3rgj"
+path="res://.godot/imported/summer_kids.mp3-c10619d337f9afed3a2375aa4b5712c5.mp3str"
+
+[deps]
+
+source_file="res://music/summer_kids.mp3"
+dest_files=["res://.godot/imported/summer_kids.mp3-c10619d337f9afed3a2375aa4b5712c5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
