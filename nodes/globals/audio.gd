@@ -44,6 +44,7 @@ func fade_out() -> void:
 
 func stop_music() -> void:
 	is_playing_forever = false
+	_restart_music_timer.stop()
 	_music_player.stop()
 
 func play_sound(sound_stream: AudioStream) -> void:

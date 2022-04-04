@@ -3,13 +3,13 @@ extends Node
 var has_loaded := false
 var needs_to_save := false
 
-var sounds_bus = AudioServer.get_bus_index("Sounds")
-var music_bus = AudioServer.get_bus_index("Music")
+var sounds_bus = AudioServer.get_bus_index("sounds")
+var music_bus = AudioServer.get_bus_index("music")
 
 var initial := {
 	"volume": {
-		"sounds": db2linear(AudioServer.get_bus_volume_db(sounds_bus)),
-		"music": db2linear(AudioServer.get_bus_volume_db(music_bus)),
+		"sounds": 0.75,
+		"music": 0.25,
 	},
 }
 
