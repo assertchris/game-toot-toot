@@ -64,3 +64,6 @@ func _on_music_player_finished() -> void:
 
 func _on_sound_player_finished() -> void:
 	sound_finished.emit()
+
+func is_playing_music() -> bool:
+	return _music_player.playing

@@ -6,6 +6,12 @@ var current_screen_node: GameScreen
 var is_changing_screen := false
 
 func _ready() -> void:
+	if not Variables.has_loaded:
+		Variables.load_variables()
+
+	if Variables.stored.is_fullscreen:
+		maximise()
+
 	root = get_tree().get_root()
 	current_screen_node = root.get_child(root.get_child_count() - 1)
 	current_screen_node.call_deferred("prepare_to_show")
@@ -42,3 +48,21 @@ func load_new_screen(new_screen_node: GameScreen, new_screen: int):
 	DisplayServer.virtual_keyboard_hide()
 
 	is_changing_screen = false
+
+static func maximise() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+
+static func restore() -> void:
+	var screen_size = DisplayServer.screen_get_size()
+
+	var window_size = Vector2(
+		ProjectSettings.get_setting("display/window/size/window_width_override"),
+		ProjectSettings.get_setting("display/window/size/window_height_override")
+	)
+
+	DisplayServer.window_set_position(Vector2(
+		(screen_size.x / 2) - (window_size.x / 2),
+		(screen_size.y / 2) - (window_size.y / 2)
+	))
+
+	DisplayServer.window_set_size(window_size)

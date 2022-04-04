@@ -7,6 +7,7 @@ var sounds_bus = AudioServer.get_bus_index("sounds")
 var music_bus = AudioServer.get_bus_index("music")
 
 var initial := {
+	"is_fullscreen": true,
 	"volume": {
 		"sounds": 0.75,
 		"music": 0.25,

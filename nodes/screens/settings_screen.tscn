@@ -5,3 +5,37 @@
 
 [node name="SettingsScreen" instance=ExtResource( "1_4dft4" )]
 script = ExtResource( "2_1q32d" )
+
+[node name="Center" type="CenterContainer" parent="." index="0"]
+offset_right = 360.0
+offset_bottom = 240.0
+
+[node name="Items" type="VBoxContainer" parent="Center" index="0"]
+offset_left = 127.0
+offset_top = 87.0
+offset_right = 232.0
+offset_bottom = 153.0
+
+[node name="Fullscreen" type="HBoxContainer" parent="Center/Items" index="0"]
+offset_right = 105.0
+offset_bottom = 31.0
+
+[node name="Label" type="Label" parent="Center/Items/Fullscreen" index="0"]
+offset_top = 2.0
+offset_right = 77.0
+offset_bottom = 28.0
+text = "fullscreen"
+
+[node name="CheckBox" type="CheckBox" parent="Center/Items/Fullscreen" index="1"]
+offset_left = 81.0
+offset_right = 105.0
+offset_bottom = 31.0
+
+[node name="BackButton" type="Button" parent="Center/Items" index="1"]
+offset_top = 35.0
+offset_right = 105.0
+offset_bottom = 66.0
+text = "back"
+
+[connection signal="pressed" from="Center/Items/Fullscreen/CheckBox" to="." method="_on_fullscreen_check_box_pressed"]
+[connection signal="pressed" from="Center/Items/BackButton" to="." method="_on_back_button_pressed"]

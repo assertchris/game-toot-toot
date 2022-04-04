@@ -2,6 +2,7 @@ extends GameLevel
 
 @export var vehicles : Array[PackedScene] = []
 
+@onready var _camera := $Camera
 @onready var _entrance_path := $Paths/Entrance
 @onready var _top_path := $Paths/Top
 @onready var _middle_path := $Paths/Middle
@@ -22,6 +23,8 @@ func _ready() -> void:
 
 	for i in range(_quests.get_child_count()):
 		quests.append(null)
+
+	_camera.current = true
 
 #func _draw() -> void:
 #	draw_polyline(_entrance_path.curve.get_baked_points(), Color.BLACK, 2, false)
