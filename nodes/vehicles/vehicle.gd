@@ -28,3 +28,6 @@ func fade_out() -> void:
 
 func _flip_sprite() -> void:
 	_sprite.flip_h = not _sprite.flip_h
+
+func complete() -> void:
+	has_completed_quest = true

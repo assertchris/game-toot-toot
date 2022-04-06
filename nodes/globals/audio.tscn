@@ -13,6 +13,7 @@ bus = &"sounds"
 
 [node name="RestartMusicTimer" type="Timer" parent="."]
 wait_time = 15.0
+one_shot = true
 
 [connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]
 [connection signal="finished" from="SoundPlayer" to="." method="_on_sound_player_finished"]

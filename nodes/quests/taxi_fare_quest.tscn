@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxhfmhsa7qq72"]
+[gd_scene load_steps=11 format=3 uid="uid://bxhfmhsa7qq72"]
 
 [ext_resource type="PackedScene" uid="uid://c3mjto2f0avt1" path="res://nodes/quests/quest.tscn" id="1_fn6t7"]
 [ext_resource type="Script" path="res://nodes/quests/taxi_fare_quest.gd" id="2_byk3x"]
+[ext_resource type="AudioStream" uid="uid://bprptrdb1iapt" path="res://sounds/whistle.wav" id="3_5coyo"]
 [ext_resource type="Texture2D" uid="uid://k0eluwk5nco0" path="res://resources/green_boy_walking_left.tres" id="3_aqlkw"]
+[ext_resource type="AudioStream" uid="uid://ddlk4qcijeldj" path="res://sounds/frustration.wav" id="4_0l5fo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxbya"]
 atlas = ExtResource( "3_aqlkw" )
@@ -31,6 +33,8 @@ size = Vector2(20, 35)
 z_index = 30
 script = ExtResource( "2_byk3x" )
 quest_type = 1
+whistle_stream = ExtResource( "3_5coyo" )
+frustration_stream = ExtResource( "4_0l5fo" )
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." index="0"]
 texture_filter = 1

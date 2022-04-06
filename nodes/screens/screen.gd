@@ -6,6 +6,8 @@ signal prepared_to_hide
 signal did_show
 signal did_hide
 
+@export var action_stream : AudioStream
+
 func prepare_to_show() -> void:
 	prepared_to_show.emit()
 
@@ -17,3 +19,6 @@ func do_show(_new_screen : int) -> void:
 
 func do_hide(_current_screen : int) -> void:
 	did_hide.emit()
+
+func play_action_sound() -> void:
+	Audio.play_sound(action_stream)

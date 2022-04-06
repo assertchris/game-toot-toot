@@ -3,6 +3,8 @@ extends GameLevel
 @export var vehicle_scenes : Array[PackedScene] = []
 @export var quest_scenes : Array[PackedScene] = []
 
+@export var turn_stream : AudioStream
+
 @onready var _camera := $Camera
 @onready var _entrance_path := $Paths/Entrance
 @onready var _top_path := $Paths/Top
@@ -55,22 +57,22 @@ func _ready() -> void:
 	_highlight_quest.visible = true
 	progress_tutorial()
 
-func spawn_quest(position : Position2D) -> GameQuest:
+func spawn_quest(spawn_position : Position2D) -> GameQuest:
 	var new_quest = quest_scenes[randi() % quest_scenes.size()].instantiate()
 	_quests.add_child(new_quest)
-	new_quest.global_position = position.global_position
+	new_quest.global_position = spawn_position.global_position
 	new_quest.show()
 
 	return new_quest
 
-func color_for_cover(child, show : bool) -> Color:
-		if not show and child is Label:
+func color_for_cover(child, will_show : bool) -> Color:
+		if not will_show and child is Label:
 			return Color(1.0, 1.0, 1.0, 0.0)
 
-		if show and child is Label:
+		if will_show and child is Label:
 			return Color(1.0, 1.0, 1.0, 1.0)
 
-		if not show:
+		if not will_show:
 			return Color(0.0, 0.0, 0.0, 0.0)
 
 		return Color(0.0, 0.0, 0.0, 0.75)
@@ -156,6 +158,8 @@ func move_to_path(vehicle : GameVehicle, path : Path2D) -> void:
 func _on_top_indicator_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
+			Audio.play_sound(turn_stream)
+
 			if tutorial_state == tutorial_states.highlighting_turns:
 				progress_tutorial()
 
@@ -169,6 +173,8 @@ func _on_top_indicator_gui_input(event: InputEvent) -> void:
 func _on_middle_indicator_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
+			Audio.play_sound(turn_stream)
+
 			if tutorial_state == tutorial_states.highlighting_turns:
 				progress_tutorial()
 
@@ -182,6 +188,8 @@ func _on_middle_indicator_gui_input(event: InputEvent) -> void:
 func _on_bottom_indicator_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
+			Audio.play_sound(turn_stream)
+
 			if tutorial_state == tutorial_states.highlighting_turns:
 				progress_tutorial()
 
@@ -229,8 +237,6 @@ func progress_tutorial() -> void:
 			hide_quest_highlight()
 
 func _on_quest_spawn_timer_timeout() -> void:
-	print(quests)
-
 	var has_slot := false
 
 	for quest in quests:

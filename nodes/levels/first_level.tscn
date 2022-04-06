@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dy1m8i8ptvjsb"]
+[gd_scene load_steps=15 format=3 uid="uid://dy1m8i8ptvjsb"]
 
 [ext_resource type="PackedScene" uid="uid://bbndmbbnbuwpi" path="res://nodes/levels/level.tscn" id="1_3o6gg"]
 [ext_resource type="Script" path="res://nodes/levels/first_level.gd" id="2_se2ei"]
 [ext_resource type="PackedScene" uid="uid://bci75kapvrpub" path="res://nodes/vehicles/taxi_vehicle.tscn" id="3_n578r"]
 [ext_resource type="TileSet" uid="uid://bksve85wia1da" path="res://resources/tiles.tres" id="4_js1eu"]
 [ext_resource type="PackedScene" uid="uid://bxhfmhsa7qq72" path="res://nodes/quests/taxi_fare_quest.tscn" id="5_2sfis"]
+[ext_resource type="AudioStream" uid="uid://5jb1vlnwbbja" path="res://sounds/turn.wav" id="5_cmqum"]
 [ext_resource type="Theme" uid="uid://dayrlt8gnvy24" path="res://resources/level_theme.tres" id="5_pfjqb"]
 
 [sub_resource type="Curve2D" id="Curve2D_i7ytv"]
@@ -41,6 +42,7 @@ texture_filter = 1
 script = ExtResource( "2_se2ei" )
 vehicle_scenes = [ExtResource( "3_n578r" )]
 quest_scenes = [ExtResource( "5_2sfis" )]
+turn_stream = ExtResource( "5_cmqum" )
 
 [node name="Tiles" type="TileMap" parent="." index="0"]
 texture_filter = 1

@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfrj7vkrqm7rg"]
+[gd_scene load_steps=3 format=3 uid="uid://cfrj7vkrqm7rg"]
 
 [ext_resource type="Script" path="res://nodes/screens/screen.gd" id="1_285im"]
+[ext_resource type="AudioStream" uid="uid://diipntvlgrjt1" path="res://sounds/action_1.wav" id="2_tijnv"]
 
 [node name="Screen" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( "1_285im" )
+action_stream = ExtResource( "2_tijnv" )
