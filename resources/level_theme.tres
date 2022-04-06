@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dayrlt8gnvy24"]
+
+[ext_resource type="FontData" uid="uid://b0uilw7lbbfpg" path="res://fonts/pixel-rpg.ttf" id="1_5lfp5"]
+
+[sub_resource type="Font" id="Font_pvko6"]
+data/0 = ExtResource( "1_5lfp5" )
+
+[resource]
+Label/font_sizes/font_size = 12
+Label/fonts/font = SubResource( "Font_pvko6" )

@@ -11,6 +11,7 @@ extends GameLevel
 @onready var _middle_indicator := $Turns/Middle/Indicator
 @onready var _bottom_indicator := $Turns/Bottom/Indicator
 @onready var _quests := $Quests
+@onready var _highlight_turns := $HighlightTurns
 
 var is_top_open := false
 var is_middle_open := false
@@ -19,18 +20,43 @@ var is_bottom_open := false
 var quests := []
 
 func _ready() -> void:
-	color_turns()
+	_top_indicator.texture = Constants.turn_down_image
+	_middle_indicator.texture = Constants.turn_down_image
+	_bottom_indicator.texture = Constants.turn_right_image
 
 	for i in range(_quests.get_child_count()):
 		quests.append(null)
 
 	_camera.current = true
 
-#func _draw() -> void:
-#	draw_polyline(_entrance_path.curve.get_baked_points(), Color.BLACK, 2, false)
-#	draw_polyline(_top_path.curve.get_baked_points(), Color.BLACK, 2, false)
-#	draw_polyline(_middle_path.curve.get_baked_points(), Color.BLACK, 2, false)
-#	draw_polyline(_bottom_path.curve.get_baked_points(), Color.BLACK, 2, false)
+	for child in _highlight_turns.get_children():
+		child.modulate =  color_for_cover(child, false)
+
+	show_highlight()
+
+func color_for_cover(child, show : bool) -> Color:
+		if not show and child is Label:
+			return Color(1.0, 1.0, 1.0, 0.0)
+
+		if show and child is Label:
+			return Color(1.0, 1.0, 1.0, 1.0)
+
+		if not show:
+			return Color(0.0, 0.0, 0.0, 0.0)
+
+		return Color(0.0, 0.0, 0.0, 0.5)
+
+func show_highlight() -> void:
+	var tween = get_tree().create_tween()
+
+	for child in _highlight_turns.get_children():
+		tween.parallel().tween_property(child, "modulate", color_for_cover(child, true), 1)
+
+func hide_highlight() -> void:
+	var tween = get_tree().create_tween()
+
+	for child in _highlight_turns.get_children():
+		tween.parallel().tween_property(child, "modulate", color_for_cover(child, false), 1)
 
 func _process(delta: float) -> void:
 	for child in _entrance_path.get_children():
@@ -62,38 +88,6 @@ func _on_vehicle_spawn_timer_timeout() -> void:
 	_entrance_path.add_child(new_vehicle)
 	new_vehicle.fade_in()
 
-func _on_top_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			is_top_open = not is_top_open
-			color_turns()
-
-func _on_middle_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			is_middle_open = not is_middle_open
-			color_turns()
-
-func _on_bottom_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			is_bottom_open = not is_bottom_open
-			color_turns()
-
-func color_turns() -> void:
-	_top_indicator.color = Constants.turn_color_closed
-	_middle_indicator.color = Constants.turn_color_closed
-	_bottom_indicator.color = Constants.turn_color_closed
-
-	if is_top_open:
-		_top_indicator.color = Constants.turn_color_open
-
-	if is_middle_open:
-		_middle_indicator.color = Constants.turn_color_open
-
-	if is_bottom_open:
-		_bottom_indicator.color = Constants.turn_color_open
-
 func _on_top_area_entered(area: Area2D) -> void:
 	var vehicle := area.get_parent()
 
@@ -117,3 +111,39 @@ func move_to_path(vehicle : GameVehicle, path : Path2D) -> void:
 	path.call_deferred("add_child", vehicle)
 	vehicle.call_deferred("set_offset", 0)
 	vehicle.call_deferred("flip")
+
+func _on_top_indicator_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			hide_highlight()
+
+			if is_top_open:
+				is_top_open = false
+				_top_indicator.texture = Constants.turn_down_image
+			else:
+				is_top_open = true
+				_top_indicator.texture = Constants.turn_left_image
+
+func _on_middle_indicator_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			hide_highlight()
+
+			if is_middle_open:
+				is_middle_open = false
+				_middle_indicator.texture = Constants.turn_down_image
+			else:
+				is_middle_open = true
+				_middle_indicator.texture = Constants.turn_left_image
+
+func _on_bottom_indicator_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			hide_highlight()
+
+			if is_bottom_open:
+				is_bottom_open = false
+				_bottom_indicator.texture = Constants.turn_right_image
+			else:
+				is_bottom_open = true
+				_bottom_indicator.texture = Constants.turn_left_image

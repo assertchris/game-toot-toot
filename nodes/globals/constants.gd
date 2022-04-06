@@ -1,7 +1,8 @@
 extends Node
 
-const turn_color_closed := Color("#ff000280")
-const turn_color_open := Color("#00ff3680")
+@export var turn_down_image : Texture
+@export var turn_left_image : Texture
+@export var turn_right_image : Texture
 
 @export var music_streams : Array[AudioStream] = []
 
