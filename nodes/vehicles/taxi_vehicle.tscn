@@ -12,6 +12,7 @@ region = Rect2(244, 234, 24, 22)
 
 [node name="TaxiVehicle" instance=ExtResource( "1_41c7v" )]
 script = ExtResource( "2_48r8g" )
+quest_type = 1
 
 [node name="Sprite" parent="." index="0"]
 texture = SubResource( "AtlasTexture_berfj" )

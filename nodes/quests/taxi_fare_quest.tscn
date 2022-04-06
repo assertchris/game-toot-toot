@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxhfmhsa7qq72"]
+
+[ext_resource type="PackedScene" uid="uid://c3mjto2f0avt1" path="res://nodes/quests/quest.tscn" id="1_fn6t7"]
+[ext_resource type="Script" path="res://nodes/quests/taxi_fare_quest.gd" id="2_byk3x"]
+[ext_resource type="Texture2D" uid="uid://k0eluwk5nco0" path="res://resources/green_boy_walking_left.tres" id="3_aqlkw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxbya"]
+atlas = ExtResource( "3_aqlkw" )
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w7wy"]
+atlas = ExtResource( "3_aqlkw" )
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd2is"]
+atlas = ExtResource( "3_aqlkw" )
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2c53"]
+animations = [{
+"frames": [SubResource( "AtlasTexture_yxbya" ), SubResource( "AtlasTexture_3w7wy" ), SubResource( "AtlasTexture_bd2is" )],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdgd5"]
+size = Vector2(20, 35)
+
+[node name="TaxiFareQuest" instance=ExtResource( "1_fn6t7" )]
+z_index = 30
+script = ExtResource( "2_byk3x" )
+quest_type = 1
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." index="0"]
+texture_filter = 1
+position = Vector2(0, -4)
+frames = SubResource( "SpriteFrames_c2c53" )
+frame = 2
+
+[node name="Collider" parent="." index="1"]
+position = Vector2(0, 7.5)
+shape = SubResource( "RectangleShape2D_xdgd5" )

@@ -9,10 +9,20 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Node",
+"class": &"ConstantsScript",
+"language": &"GDScript",
+"path": "res://nodes/globals/constants.gd"
+}, {
 "base": "Node2D",
 "class": &"GameLevel",
 "language": &"GDScript",
 "path": "res://nodes/levels/level.gd"
+}, {
+"base": "Area2D",
+"class": &"GameQuest",
+"language": &"GDScript",
+"path": "res://nodes/quests/quest.gd"
 }, {
 "base": "MarginContainer",
 "class": &"GameScreen",
@@ -25,7 +35,9 @@ _global_script_classes=[{
 "path": "res://nodes/vehicles/vehicle.gd"
 }]
 _global_script_class_icons={
+"ConstantsScript": "",
 "GameLevel": "",
+"GameQuest": "",
 "GameScreen": "",
 "GameVehicle": ""
 }
@@ -63,8 +75,10 @@ window/stretch/aspect="expand"
 
 2d_render/layer_1="Vehicles"
 2d_render/layer_2="Turns"
+2d_render/layer_3="Quests"
 2d_physics/layer_1="Vehicles"
 2d_physics/layer_2="Turns"
+2d_physics/layer_3="Quests"
 
 [rendering]
 

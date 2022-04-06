@@ -1,4 +1,5 @@
 extends Node
+class_name ConstantsScript
 
 @export var turn_down_image : Texture
 @export var turn_left_image : Texture
@@ -28,3 +29,8 @@ enum screens {
 
 const save_file_path := "user://toot_toot.save"
 const save_file_key := "zUG!fQ}yw^ZGXDr#EiVK}q-r"
+
+enum quest_types {
+	none,
+	taxi_fare,
+}

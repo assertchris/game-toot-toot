@@ -2,5 +2,10 @@
 
 [ext_resource type="Script" path="res://nodes/quests/quest.gd" id="1_mfsvh"]
 
-[node name="Quest" type="Node2D"]
+[node name="Quest" type="Area2D"]
+collision_layer = 4
 script = ExtResource( "1_mfsvh" )
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_quest_area_entered"]

@@ -4,10 +4,14 @@ class_name GameVehicle
 signal faded_in
 signal faded_out
 
+@export var quest_type : ConstantsScript.quest_types
+
 @export var speed := 100
 
 @onready var _sprite := $Sprite
 @onready var _animator := $Animator
+
+var has_completed_quest := false
 
 func flip() -> void:
 	_animator.play("flip")

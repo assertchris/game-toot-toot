@@ -6,5 +6,8 @@
 data/0 = ExtResource( "1_5lfp5" )
 
 [resource]
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_outline_size = 2
 Label/font_sizes/font_size = 12
 Label/fonts/font = SubResource( "Font_pvko6" )
