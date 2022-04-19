@@ -1,7 +1,9 @@
 extends GameScreen
 
 @onready var _camera := $Camera
-@onready var _quit_button := $Center/Items/QuitButton
+@onready var _quit_button := $MenuAnchor/Items/QuitButton
+@onready var _menu_anchor := $MenuAnchor
+@onready var _menu_position := $Interface/MenuPosition
 
 func _ready() -> void:
 	if not Audio.is_playing_music():
@@ -9,6 +11,9 @@ func _ready() -> void:
 
 	_camera.current = true
 	_quit_button.visible = not OS.has_feature("HTML5")
+
+func _process(_delta: float) -> void:
+	_menu_anchor.global_position = _menu_position.global_position
 
 func _on_play_button_pressed() -> void:
 	play_action_sound()
