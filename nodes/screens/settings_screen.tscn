@@ -20,9 +20,6 @@ position = Vector2(11, 113)
 [node name="Items" type="VBoxContainer" parent="MenuAnchor" index="0"]
 offset_right = 68.0
 offset_bottom = 124.0
-metadata/_edit_use_custom_anchors = false
-metadata/_edit_use_anchors_ = true
-metadata/_edit_layout_mode = 0
 
 [node name="Settings" type="HBoxContainer" parent="MenuAnchor/Items" index="0"]
 offset_right = 91.0
@@ -72,5 +69,5 @@ follow_viewport_enable = true
 [node name="MenuPosition" type="Position2D" parent="Interface" index="0"]
 position = Vector2(11, 113)
 
-[connection signal="pressed" from="MenuAnchor/Items/Settings/Fullscreen/CheckBox" to="." method="_on_fullscreen_check_box_pressed"]
+[connection signal="pressed" from="MenuAnchor/Items/Settings/Fullscreen/CheckBox" to="." method="_on_check_box_pressed"]
 [connection signal="pressed" from="MenuAnchor/Items/Buttons/BackButton" to="." method="_on_back_button_pressed"]

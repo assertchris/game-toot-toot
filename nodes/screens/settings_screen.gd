@@ -22,17 +22,6 @@ func _on_back_button_pressed() -> void:
 	play_action_sound()
 	Screens.change_screen(Constants.screens.welcome)
 
-func _on_fullscreen_check_box_pressed() -> void:
-	play_action_sound()
-
-	Variables.stored.is_fullscreen = _fullscreen_checkbox.is_pressed()
-	Variables.force_save_variables()
-
-	if _fullscreen_checkbox.is_pressed():
-		Screens.maximise()
-	else:
-		Screens.restore()
-
 func do_show(_new_screen : int, _current_screen : int) -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(_items, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
@@ -47,3 +36,14 @@ func do_hide(new_screen : int, _current_screen : int) -> void:
 	await tween.finished
 
 	did_hide.emit()
+
+func _on_check_box_pressed() -> void:
+	play_action_sound()
+
+	Variables.stored.is_fullscreen = _fullscreen_checkbox.is_pressed()
+	Variables.force_save_variables()
+
+	if _fullscreen_checkbox.is_pressed():
+		Screens.maximise()
+	else:
+		Screens.restore()

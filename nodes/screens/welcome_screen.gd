@@ -1,6 +1,5 @@
 extends GameScreen
 
-@onready var _camera := $Camera
 @onready var _quit_button := $MenuAnchor/Items/QuitButton
 @onready var _menu_anchor := $MenuAnchor
 @onready var _menu_position := $Interface/MenuPosition
