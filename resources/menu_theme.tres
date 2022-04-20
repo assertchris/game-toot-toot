@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dbnubkvu1y2ht"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dbnubkvu1y2ht"]
 
 [ext_resource type="FontData" uid="uid://b0uilw7lbbfpg" path="res://fonts/pixel-rpg.ttf" id="1_flnry"]
 [ext_resource type="Texture2D" uid="uid://de4dcamy407la" path="res://images/tiles.png" id="2_lnckv"]
@@ -22,6 +22,19 @@ margin_right = 5.0
 margin_top = 5.0
 margin_bottom = 5.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_osjmd"]
+atlas = ExtResource( "2_lnckv" )
+region = Rect2(130, 290, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0bru"]
+atlas = ExtResource( "2_lnckv" )
+region = Rect2(114, 290, 12, 12)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3rok"]
+
+[sub_resource type="Font" id="Font_dptay"]
+data/0 = ExtResource( "1_flnry" )
+
 [resource]
 Button/colors/font_color = Color(0.627451, 0.611765, 0.792157, 1)
 Button/colors/font_focus_color = Color(0.627451, 0.611765, 0.792157, 1)
@@ -35,3 +48,16 @@ Button/styles/focus = SubResource( "StyleBoxTexture_ud35m" )
 Button/styles/hover = SubResource( "StyleBoxTexture_ud35m" )
 Button/styles/normal = SubResource( "StyleBoxTexture_ud35m" )
 Button/styles/pressed = SubResource( "StyleBoxTexture_ud35m" )
+CheckBox/icons/checked = SubResource( "AtlasTexture_osjmd" )
+CheckBox/icons/checked_disabled = SubResource( "AtlasTexture_osjmd" )
+CheckBox/icons/unchecked = SubResource( "AtlasTexture_l0bru" )
+CheckBox/icons/unchecked_disabled = SubResource( "AtlasTexture_l0bru" )
+CheckBox/styles/disabled = SubResource( "StyleBoxEmpty_b3rok" )
+CheckBox/styles/focus = SubResource( "StyleBoxEmpty_b3rok" )
+CheckBox/styles/hover = SubResource( "StyleBoxEmpty_b3rok" )
+CheckBox/styles/hover_pressed = SubResource( "StyleBoxEmpty_b3rok" )
+CheckBox/styles/normal = SubResource( "StyleBoxEmpty_b3rok" )
+CheckBox/styles/pressed = SubResource( "StyleBoxEmpty_b3rok" )
+Label/colors/font_color = Color(0.627451, 0.611765, 0.792157, 1)
+Label/font_sizes/font_size = 12
+Label/fonts/font = SubResource( "Font_dptay" )
